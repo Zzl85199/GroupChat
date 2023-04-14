@@ -1,0 +1,39 @@
+.homepage {
+    display: flex; /* 使用 Flexbox 布局 */
+    justify-content: space-around; /* 左中右三個部分平均分佈 */
+    align-items: center; /* 垂直置中 */
+    height: 100vh; /* 設定高度為視窗高度 */
+  }
+.profile-card {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto; /* 將卡片水平置中 */
+  }
+  
+  .profile-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto;
+  }
+  
+  .profile-card h2 {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+  
+  .profile-card h3 {
+    font-size: 16px;
+    color: #777;
+    margin-top: 10px;
+  }
+  
+  .profile-card p {
+    font-size: 14px;
+    color: #777;
+    margin-top: 10px;
+  }
+  
