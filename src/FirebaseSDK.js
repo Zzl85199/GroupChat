@@ -18,4 +18,25 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+const db = getFirestore(app);
+
+// 定義欲取得的文件路徑
+const documentPath = "/Rooms/Room2/Messages/messages001";
+
+// 取得文件資料
+void getDoc(doc(db, documentPath))
+  .then((docSnapshot) => {
+    if (docSnapshot.exists()) {
+      // 取得文件資料
+      const data = docSnapshot.data();
+      // 取得 text 資料
+      const text = data.text;
+      console.log("text資料: ", text);
+    } else {
+      console.log("文件不存在");
+    }
+  })
+  .catch((error) => {
+    console.error("取得文件資料時發生錯誤: ", error);
+  });
+  

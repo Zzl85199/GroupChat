@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './MessagePage.css'; // 引入 CSS 樣式
+//import { getFirestore, collection, onSnapshot } from 'firebase/firestore'; // 引入 Firestore 相關的函式
+import './App.css'; // 引入 CSS 樣式
+//import { getDoc } from './FirebaseSDK';
 
 function MessagePage() {
   const [messages, setMessages] = useState([]); // 用於儲存訊息的狀態
@@ -21,13 +23,30 @@ function MessagePage() {
     messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
   };
 
+  
   useEffect(() => {
     scrollToBottom(); // 訊息列表加載完成後自動滾動到最底部
   }, [messages]); // 當訊息列表有變動時觸發
+  
+/*
+  useEffect(() => {
+    scrollToBottom(); // 訊息列表加載完成後自動滾動到最底部
+
+    // 使用 onSnapshot 監聽 Firestore 中的訊息集合
+    FirebaseSDK.db = getFirestore(); // 取得 Firestore 實例
+    const messagesCollection = collection(FirebaseSDK.db, 'Rooms', 'Room2', 'Messages', 'messages001'); // 取得訊息集合的參考
+    onSnapshot(messagesCollection, (snapshot) => {
+      const updatedMessages = snapshot.docs.map(doc => doc.data()); // 取得快照中的資料並轉換為陣列形式
+      setMessages(updatedMessages); // 更新訊息列表的狀態
+    });
+
+  }, []); // 當元件掛載完成時觸發
+*/
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') { // 檢查是否按下 'Enter' 鍵
       handleSendMessage(); // 呼叫發送訊息的處理函式
+      //getDoc();
     }
   };
 

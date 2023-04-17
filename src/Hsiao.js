@@ -1,6 +1,6 @@
 import React from 'react';
 import cat from './images/cat.png';
-import './Hsiao.css'
+import './App.css'
 //import myImage from './image/rainbowcat.jpg';
 function hsiao() {
   return (

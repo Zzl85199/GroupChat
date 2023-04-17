@@ -1,5 +1,5 @@
 import React from 'react';
-import './Lun.css';
+import './App.css';
 import MessagePage from './MessagePage';
 
 function Lun() {
@@ -11,7 +11,7 @@ function Lun() {
         <p className="profile-title">handsomebro</p>
       </div>
       <div>
-
+        
       </div>
 
       <div>

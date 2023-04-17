@@ -1,6 +1,6 @@
 import React from 'react';
 import MessagePage from './MessagePage';
-import './Tong.css';
+import './App.css';
 
 function Tong() {
   return (
